@@ -1,28 +1,24 @@
 # Performance Analysis
 
-## 1. Overview
+## 1. Overview and Environment Setup
 
-This document presents the CPU performance results obtained from the two virtualization environments used in the experiment:
+This document presents the empirical benchmark results comparing the performance of a **Type-1 Bare-Metal Hypervisor (Proxmox VE)** and a **Type-2 Hosted Hypervisor (VMware Workstation)**. Both virtual machines were provisioned with identical hardware resources and ran Ubuntu as the guest operating system. CPU performance and latency were measured using **Sysbench**.
 
-- **Type-1 Hypervisor:** Proxmox VE
-- **Type-2 Hypervisor:** VMware Workstation
+### Virtual Machine Resource Specification
 
-Both virtual machines were configured with the same basic resources to maintain a fair comparison:
+| Resource | Type-1 (Proxmox VE) | Type-2 (VMware Workstation) |
+| :--- | :--- | :--- |
+| **Guest OS** | Ubuntu 22.04 LTS | Ubuntu 22.04 LTS |
+| **vCPU** | 2 vCPU (1 Socket, 2 Cores) | 2 vCPU (1 Processor, 2 Cores) |
+| **RAM** | 2048 MiB (~2 GB) | 2048 MB (~2 GB) |
+| **Disk Size** | 20 GB | 20 GB |
+| **Network Interface** | Bridge (`vmbr0`) | NAT |
+| **Benchmark Tool** | Sysbench (`--cpu-max-prime=20000`) | Sysbench (`--cpu-max-prime=20000`) |
 
-| Resource | Configuration |
-|---|---|
-| Guest Operating System | Ubuntu |
-| CPU | 2 vCPU |
-| Memory | 2 GB RAM |
-| Disk | 20 GB |
-| Benchmark Tool | Sysbench |
+---
 
-The CPU performance was measured using the following Sysbench command:
+## 2. Benchmark Results & Data Comparison
 
+The benchmark was executed using the command:
 ```bash
 sysbench cpu --cpu-max-prime=20000 run
-
-2. Type-1 Hypervisor Results – Proxmox VE
-2.1 Configuration
-<table> <tr> <th>Parameter</th> <th>Value</th> </tr> <tr> <td>Hypervisor</td> <td>Proxmox VE</td> </tr> <tr> <td>Hypervisor Type</td> <td>Type-1</td> </tr> <tr> <td>Guest Operating System</td> <td>Ubuntu</td> </tr> <tr> <td>CPU</td> <td>2 vCPU</td> </tr> <tr> <td>Memory</td> <td>2 GB</td> </tr> <tr> <td>Disk</td> <td>20 GB</td> </tr> <tr> <td>Network</td> <td>vmbr0</td> </tr> </table>
-
