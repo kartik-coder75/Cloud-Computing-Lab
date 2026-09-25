@@ -34,41 +34,39 @@ sysbench cpu --cpu-max-prime=20000 run
     <th>Difference</th>
   </tr>
   <tr>
-    <td>Execution Time</td>
-    <td>Data 2</td>
-    <td>Data 3</td>
-    <td>Data 3</td>
+    <td><b></b>Execution Time</b></td>
+    <td>9.9968 s</td>
+    <td>9.9959 s</td>
+    <td>0.0009 s</td>
   </tr>
   <tr>
-    <td>Data 4</td>
-    <td>Data 5</td>
-    <td>Data 6</td>
-    <td>Data 3</td>
+    <td><b>Total Events</b></td>
+    <td>15877</td>
+    <td>6898</td>
+    <td>8979</td>
   </tr>
   <tr>
-    <td>Data 1</td>
-    <td>Data 2</td>
-    <td>Data 3</td>
-    <td>Data 3</td>
+    <td><b>Events per Second</b></td>
+    <td>1587.47</td>
+    <td>689.57</td>
+    <td>897.90</td>
   </tr>
   <tr>
-    <td>Data 4</td>
-    <td>Data 5</td>
-    <td>Data 6</td>
-    <td>Data 3</td>
+    <td><b>Minimum Latency</b></td>
+    <td>0.59 ms</td>
+    <td>1.25 ms</td>
+    <td>0.66 ms </td>
   </tr>
   <tr>
-    <td>Data 4</td>
-    <td>Data 5</td>
-    <td>Data 6</td>
-    <td>Data 3</td>
+    <td><b>Average Latency</b></td>
+    <td>0.63 ms</td>
+    <td>1.45 ms</td>
+    <td>0.82 ms</td>
+  </tr>
+  <tr>
+    <td><b>Maximum Latency</b></td>
+    <td>1.34 ms</td>
+    <td>4.23 ms</td>
+    <td>2.89 ms</td>
   </tr>
 </table>
-| Parameter |	Proxmox VE | VMware Workstation |	Difference |
-| :--- | :--- | :--- |
-| **Execution Time** |	9.9968 s	9.9959 s	0.0009 s
-| **Total Events** |	15877 |	6898 |	8979 |
-| **Events per Second** |	1587.47	| 689.57 | 897.90 |
-| **Minimum Latency** |	0.59 ms	| 1.25 ms |	0.66 ms |
-| **Average Latency** |	0.63 ms	| 1.45 ms |	0.82 ms |
-| **Maximum Latency** |	1.34 ms	| 4.23 ms |	2.89 ms |
