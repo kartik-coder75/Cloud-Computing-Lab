@@ -22,12 +22,7 @@ The CPU performance was measured using the following Sysbench command:
 ```bash
 sysbench cpu --cpu-max-prime=20000 run
 
-| Parameter         | Proxmox VE | VMware Workstation | Difference |
-| ----------------- | ---------: | -----------------: | ---------: |
-| Execution Time    |   9.9968 s |           9.9959 s |   0.0009 s |
-| Total Events      |      15877 |               6898 |       8979 |
-| Events per Second |    1587.47 |             689.57 |     897.90 |
-| Minimum Latency   |    0.59 ms |            1.25 ms |    0.66 ms |
-| Average Latency   |    0.63 ms |            1.45 ms |    0.82 ms |
-| Maximum Latency   |    1.34 ms |            4.23 ms |    2.89 ms |
+2. Type-1 Hypervisor Results – Proxmox VE
+2.1 Configuration
+<table> <tr> <th>Parameter</th> <th>Value</th> </tr> <tr> <td>Hypervisor</td> <td>Proxmox VE</td> </tr> <tr> <td>Hypervisor Type</td> <td>Type-1</td> </tr> <tr> <td>Guest Operating System</td> <td>Ubuntu</td> </tr> <tr> <td>CPU</td> <td>2 vCPU</td> </tr> <tr> <td>Memory</td> <td>2 GB</td> </tr> <tr> <td>Disk</td> <td>20 GB</td> </tr> <tr> <td>Network</td> <td>vmbr0</td> </tr> </table>
 
