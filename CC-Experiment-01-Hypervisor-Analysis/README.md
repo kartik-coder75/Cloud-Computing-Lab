@@ -488,12 +488,12 @@ Record the actual results obtained from the Sysbench output.
 | CPU Allocation         | 2 vCPU        |
 | Memory Allocation      | 2 GB          |
 | Disk Allocation        | 20 GB         |
-| Total Execution Time   | Record result |
-| Total Events           | Record result |
-| Events per Second      | Record result |
-| Minimum Latency        | Record result |
-| Average Latency        | Record result |
-| Maximum Latency        | Record result |
+| Total Execution Time   | 9.9968        |
+| Total Events           | 15877         |
+| Events per Second      | 1587.47       |
+| Minimum Latency        | 0.59          |
+| Average Latency        | 0.63          |
+| Maximum Latency        | 1.34          |
 
 ---
 
@@ -990,12 +990,12 @@ Record the actual results obtained from Sysbench.
 | CPU Allocation         | 2 vCPU             |
 | Memory Allocation      | 2 GB               |
 | Disk Allocation        | 20 GB              |
-| Total Execution Time   | Record result      |
-| Total Events           | Record result      |
-| Events per Second      | Record result      |
-| Minimum Latency        | Record result      |
-| Average Latency        | Record result      |
-| Maximum Latency        | Record result      |
+| Total Execution Time   | 9.9959             |
+| Total Events           | 6898               |
+| Events per Second      | 689.57             |
+| Minimum Latency        | 1.25               |
+| Average Latency        | 1.45               |
+| Maximum Latency        | 4.23               |
 
 ---
 
@@ -1064,12 +1064,12 @@ After completing both experiments, the measured results can be recorded together
 | Memory               | 2 GB          | 2 GB               |
 | Disk                 | 20 GB         | 20 GB              |
 | Network              | vmbr0         | NAT                |
-| Total Execution Time | Record result | Record result      |
-| Total Events         | Record result | Record result      |
-| Events per Second    | Record result | Record result      |
-| Minimum Latency      | Record result | Record result      |
-| Average Latency      | Record result | Record result      |
-| Maximum Latency      | Record result | Record result      |
+| Total Execution Time | 9.9968        | 9.9959             |
+| Total Events         | 15877         | 6898               |
+| Events per Second    | 1587.47       | 689.57             |
+| Minimum Latency      | 0.59          | 1.25               |
+| Average Latency      | 0.63          | 1.45               |
+| Maximum Latency      | 1.34          | 4.23               |
 
 ---
 
