@@ -26,7 +26,44 @@ sysbench cpu --cpu-max-prime=20000 run
 ```
 ---
 ## 3. Performance Difference Summary
-
+<table border="1">
+  <tr>
+    <th>Parameter</th>
+    <th>Proxmox VE</th>
+    <th>VMware Workstation</th>
+    <th>Difference</th>
+  </tr>
+  <tr>
+    <td>Execution Time</td>
+    <td>Data 2</td>
+    <td>Data 3</td>
+    <td>Data 3</td>
+  </tr>
+  <tr>
+    <td>Data 4</td>
+    <td>Data 5</td>
+    <td>Data 6</td>
+    <td>Data 3</td>
+  </tr>
+  <tr>
+    <td>Data 1</td>
+    <td>Data 2</td>
+    <td>Data 3</td>
+    <td>Data 3</td>
+  </tr>
+  <tr>
+    <td>Data 4</td>
+    <td>Data 5</td>
+    <td>Data 6</td>
+    <td>Data 3</td>
+  </tr>
+  <tr>
+    <td>Data 4</td>
+    <td>Data 5</td>
+    <td>Data 6</td>
+    <td>Data 3</td>
+  </tr>
+</table>
 | Parameter |	Proxmox VE | VMware Workstation |	Difference |
 | :--- | :--- | :--- |
 | **Execution Time** |	9.9968 s	9.9959 s	0.0009 s
