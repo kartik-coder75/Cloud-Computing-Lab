@@ -22,3 +22,15 @@ This document presents the empirical benchmark results comparing the performance
 The benchmark was executed using the command:
 ```bash
 sysbench cpu --cpu-max-prime=20000 run
+
+```
+---
+## 3. Performance Difference Summary
+
+| Parameter |	Proxmox VE | VMware Workstation |	Difference |
+| Execution Time |	9.9968 s	9.9959 s	0.0009 s
+| Total Events |	15877 |	6898 |	8979 |
+| Events per Second |	1587.47	| 689.57 | 897.90 |
+| Minimum Latency |	0.59 ms	| 1.25 ms |	0.66 ms |
+| Average Latency |	0.63 ms	| 1.45 ms |	0.82 ms |
+| Maximum Latency |	1.34 ms	| 4.23 ms |	2.89 ms |
