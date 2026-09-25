@@ -720,4 +720,926 @@ Click **Next**.
 
 # 27. Selecting the Guest Operating System
 
-If VMware automatically dete
+If VMware automatically detects Ubuntu, verify the configuration.
+
+Otherwise configure:
+
+| Parameter              | Configuration |
+| ---------------------- | ------------- |
+| Guest Operating System | Linux         |
+| Version                | Ubuntu 64-bit |
+
+Click **Next**.
+
+---
+
+# 28. Naming the Type-2 Virtual Machine
+
+Enter the VM name.
+
+Recommended name:
+
+```text
+CC-Experiment1-Type2
+```
+
+Select the location where the virtual machine files should be stored.
+
+Click **Next**.
+
+---
+
+# 29. Configuring Virtual Disk
+
+Configure the virtual disk:
+
+| Parameter         | Configuration                                 |
+| ----------------- | --------------------------------------------- |
+| Maximum Disk Size | 20 GB                                         |
+| Disk Storage      | Store virtual disk as a single file / default |
+
+Click **Next**.
+
+The VM configuration summary will appear.
+
+Before completing the VM creation, select:
+
+```text
+Customize Hardware
+```
+
+---
+
+# 30. Configuring VMware Hardware
+
+The **Virtual Machine Settings** window will open.
+
+The following hardware resources need to be configured.
+
+---
+
+## 30.1 Configuring Memory
+
+Select:
+
+```text
+Memory
+```
+
+Set:
+
+```text
+2048 MB
+```
+
+This is approximately:
+
+```text
+2 GB RAM
+```
+
+---
+
+## 30.2 Configuring Processor
+
+Select:
+
+```text
+Processors
+```
+
+Configure:
+
+| Parameter                     | Value |
+| ----------------------------- | ----: |
+| Number of Processors          |     1 |
+| Number of Cores per Processor |     2 |
+
+Therefore:
+
+```text
+Total Virtual CPUs = 1 × 2 = 2 vCPU
+```
+
+---
+
+## 30.3 Verifying Hard Disk
+
+Select:
+
+```text
+Hard Disk
+```
+
+Verify that the disk size is:
+
+```text
+20 GB
+```
+
+---
+
+## 30.4 Configuring Network Adapter
+
+Select:
+
+```text
+Network Adapter
+```
+
+For this experiment, use:
+
+```text
+NAT
+```
+
+NAT allows the virtual machine to access the network through the host system.
+
+The network configuration can be changed depending on the available environment.
+
+---
+
+## 30.5 Final VMware Hardware Configuration
+
+Before closing the hardware settings, verify:
+
+| Resource  | Configuration |
+| --------- | ------------- |
+| Memory    | 2 GB          |
+| CPU       | 2 vCPU        |
+| Hard Disk | 20 GB         |
+| Network   | NAT           |
+| Guest OS  | Ubuntu        |
+
+Click **Close**.
+
+---
+
+# 31. Completing VMware VM Creation
+
+The New Virtual Machine Wizard will be displayed again.
+
+Review the complete configuration.
+
+Click:
+
+```text
+Finish
+```
+
+The newly created VM will appear in the VMware Workstation library.
+
+---
+
+# 32. Starting the VMware VM
+
+1. Select `CC-Experiment1-Type2` from the VMware Workstation library.
+2. Click:
+
+```text
+Power on this virtual machine
+```
+
+The Ubuntu installation process will begin.
+
+---
+
+# 33. Installing Ubuntu on VMware
+
+The Ubuntu installation interface will appear inside the VMware virtual machine.
+
+## Step 1: Select Language
+
+Select the required language.
+
+Click:
+
+```text
+Install Ubuntu
+```
+
+---
+
+## Step 2: Configure Keyboard
+
+Select the appropriate keyboard layout.
+
+Click:
+
+```text
+Continue
+```
+
+---
+
+## Step 3: Select Installation Type
+
+For a standard installation, select:
+
+```text
+Normal Installation
+```
+
+Click:
+
+```text
+Continue
+```
+
+---
+
+## Step 4: Configure Installation Disk
+
+Select:
+
+```text
+Erase disk and install Ubuntu
+```
+
+> This operation affects only the virtual hard disk created for the VMware virtual machine.
+
+Click:
+
+```text
+Install Now
+```
+
+Confirm the disk changes if prompted.
+
+---
+
+## Step 5: Configure Time Zone
+
+Select the appropriate geographical location and timezone.
+
+Click:
+
+```text
+Continue
+```
+
+---
+
+## Step 6: Create User Account
+
+Create the Ubuntu account.
+
+Configure:
+
+| Parameter     | Example         |
+| ------------- | --------------- |
+| Name          | Your Name       |
+| Computer Name | cc-type2-vm     |
+| Username      | Your Username   |
+| Password      | Secure Password |
+
+Click:
+
+```text
+Continue
+```
+
+Ubuntu installation will begin.
+
+---
+
+# 34. Restarting VMware VM
+
+After the installation is completed:
+
+1. Select **Restart Now**.
+2. Allow the VM to restart.
+3. Log in using the Ubuntu username and password created during installation.
+
+---
+
+# 35. Verifying VMware VM Configuration
+
+Open the Ubuntu Terminal.
+
+Run:
+
+```bash
+hostnamectl
+```
+
+Verify:
+
+* Hostname
+* Operating system
+* Kernel version
+* Architecture
+
+---
+
+# 36. Checking CPU Configuration
+
+Run:
+
+```bash
+lscpu
+```
+
+Observe:
+
+* Architecture
+* CPU(s)
+* CPU model
+* Number of cores
+* Virtualization type
+
+Verify that the VM has approximately:
+
+```text
+2 Virtual CPUs
+```
+
+---
+
+# 37. Checking Memory Configuration
+
+Run:
+
+```bash
+free -h
+```
+
+Observe:
+
+* Total memory
+* Used memory
+* Free memory
+* Available memory
+
+Verify that the allocated memory is approximately:
+
+```text
+2 GB
+```
+
+---
+
+# 38. Checking Disk Configuration
+
+Run:
+
+```bash
+df -h
+```
+
+Observe:
+
+* Filesystem
+* Total disk capacity
+* Used disk space
+* Available disk space
+
+Verify the virtual disk configuration.
+
+---
+
+# 39. Monitoring VMware VM Resources
+
+Run:
+
+```bash
+top
+```
+
+Observe:
+
+* CPU utilization
+* Memory utilization
+* Running processes
+* Load average
+
+Press:
+
+```text
+q
+```
+
+to exit.
+
+---
+
+# 40. Installing Sysbench on VMware VM
+
+Update the package repository:
+
+```bash
+sudo apt update
+```
+
+Install Sysbench:
+
+```bash
+sudo apt install sysbench -y
+```
+
+Verify the installation:
+
+```bash
+sysbench --version
+```
+
+---
+
+# 41. Running CPU Benchmark on VMware
+
+Run:
+
+```bash
+sysbench cpu --cpu-max-prime=20000 run
+```
+
+Allow the benchmark to complete.
+
+Record:
+
+* Total execution time
+* Total number of events
+* Events per second
+* Minimum latency
+* Average latency
+* Maximum latency
+
+---
+
+# 42. Type-2 Performance Observation
+
+Record the actual benchmark results.
+
+| Parameter            | Observation        |
+| -------------------- | ------------------ |
+| Hypervisor           | VMware Workstation |
+| Hypervisor Type      | Type-2             |
+| Guest OS             | Ubuntu             |
+| CPU                  | 2 vCPU             |
+| Memory               | 2 GB               |
+| Disk                 | 20 GB              |
+| Total Execution Time | Record result      |
+| Total Events         | Record result      |
+| Events per Second    | Record result      |
+| Minimum Latency      | Record result      |
+| Average Latency      | Record result      |
+| Maximum Latency      | Record result      |
+
+---
+
+# 43. Monitoring VMware Resource Utilization
+
+Return to VMware Workstation.
+
+Select the running virtual machine.
+
+The configured hardware can be viewed through:
+
+```text
+VM → Settings
+```
+
+Verify:
+
+* Processors
+* Memory
+* Hard Disk
+* Network Adapter
+
+Additional resource information can be monitored inside Ubuntu using:
+
+```bash
+top
+```
+
+or:
+
+```bash
+free -h
+```
+
+---
+
+# 44. Final Type-2 Results
+
+Record the final Sysbench results.
+
+| Performance Metric   | Result             |
+| -------------------- | ------------------ |
+| Hypervisor           | VMware Workstation |
+| Hypervisor Type      | Type-2             |
+| CPU Configuration    | 2 vCPU             |
+| Memory Configuration | 2 GB               |
+| Disk Configuration   | 20 GB              |
+| Total Execution Time | Record result      |
+| Total Events         | Record result      |
+| Events per Second    | Record result      |
+| Minimum Latency      | Record result      |
+| Average Latency      | Record result      |
+| Maximum Latency      | Record result      |
+
+---
+
+# 45. Comparison of Type-1 and Type-2 Hypervisors
+
+After running the same Sysbench benchmark on both virtual machines, record the results in a common table.
+
+| Parameter            | Proxmox VE    | VMware Workstation |
+| -------------------- | ------------- | ------------------ |
+| Hypervisor Type      | Type-1        | Type-2             |
+| Guest OS             | Ubuntu        | Ubuntu             |
+| CPU                  | 2 vCPU        | 2 vCPU             |
+| Memory               | 2 GB          | 2 GB               |
+| Disk                 | 20 GB         | 20 GB              |
+| Network              | vmbr0         | NAT                |
+| Total Execution Time | Record result | Record result      |
+| Total Events         | Record result | Record result      |
+| Events per Second    | Record result | Record result      |
+| Minimum Latency      | Record result | Record result      |
+| Average Latency      | Record result | Record result      |
+| Maximum Latency      | Record result | Record result      |
+
+---
+
+# 46. Understanding the Performance Metrics
+
+## Total Execution Time
+
+This represents the total amount of time required by Sysbench to complete the benchmark.
+
+```text
+Lower execution time → faster completion
+```
+
+---
+
+## Total Events
+
+This represents the total number of benchmark operations performed during the test.
+
+---
+
+## Events Per Second
+
+This represents the number of benchmark operations completed per second.
+
+```text
+Higher events/second → higher benchmark throughput
+```
+
+---
+
+## Latency
+
+Latency represents the time taken to complete an individual operation.
+
+The benchmark may report:
+
+* Minimum latency
+* Average latency
+* Maximum latency
+
+Lower latency indicates that individual operations are being completed in less time.
+
+---
+
+# 47. Performance Analysis
+
+The benchmark results from both hypervisors can be analyzed using:
+
+### CPU Performance
+
+Compare:
+
+```text
+Total Execution Time
+Events Per Second
+```
+
+### Response Time
+
+Compare:
+
+```text
+Average Latency
+Minimum Latency
+Maximum Latency
+```
+
+### Resource Utilization
+
+Compare:
+
+```text
+CPU Usage
+Memory Usage
+Disk Usage
+Network Usage
+```
+
+The actual conclusion should be based on the measured values obtained during the experiment.
+
+---
+
+# 48. Type-1 Hypervisor Workflow
+
+```text
+Access Proxmox VE
+        ↓
+Login to Proxmox
+        ↓
+Select Proxmox Node
+        ↓
+Create Virtual Machine
+        ↓
+Select Ubuntu ISO
+        ↓
+Configure 20 GB Disk
+        ↓
+Configure 2 vCPU
+        ↓
+Configure 2 GB RAM
+        ↓
+Configure vmbr0 Network
+        ↓
+Create VM
+        ↓
+Start VM
+        ↓
+Install Ubuntu
+        ↓
+Verify CPU, Memory and Disk
+        ↓
+Install Sysbench
+        ↓
+Run CPU Benchmark
+        ↓
+Record Results
+        ↓
+Monitor Resources
+        ↓
+Shutdown VM
+```
+
+---
+
+# 49. Type-2 Hypervisor Workflow
+
+```text
+Launch VMware Workstation
+        ↓
+Create New Virtual Machine
+        ↓
+Select Typical Configuration
+        ↓
+Select Ubuntu ISO
+        ↓
+Configure VM Name and Location
+        ↓
+Configure 20 GB Disk
+        ↓
+Customize Hardware
+        ↓
+Configure 2 vCPU
+        ↓
+Configure 2 GB RAM
+        ↓
+Configure NAT Network
+        ↓
+Finish VM Creation
+        ↓
+Power On VM
+        ↓
+Install Ubuntu
+        ↓
+Verify CPU, Memory and Disk
+        ↓
+Install Sysbench
+        ↓
+Run CPU Benchmark
+        ↓
+Record Results
+        ↓
+Monitor Resources
+        ↓
+Shutdown VM
+```
+
+---
+
+# 50. Important Commands Used
+
+## System Information
+
+```bash
+hostnamectl
+```
+
+## CPU Information
+
+```bash
+lscpu
+```
+
+## Memory Information
+
+```bash
+free -h
+```
+
+## Disk Information
+
+```bash
+df -h
+```
+
+## Resource Monitoring
+
+```bash
+top
+```
+
+Press `q` to exit.
+
+## Update Ubuntu Packages
+
+```bash
+sudo apt update
+```
+
+## Install Sysbench
+
+```bash
+sudo apt install sysbench -y
+```
+
+## Check Sysbench Version
+
+```bash
+sysbench --version
+```
+
+## CPU Benchmark
+
+```bash
+sysbench cpu --cpu-max-prime=20000 run
+```
+
+## Shutdown Ubuntu VM
+
+```bash
+sudo poweroff
+```
+
+---
+
+# 51. Expected Outcome
+
+After completing the experiment, two Ubuntu virtual machines will have been created:
+
+```text
+Proxmox VE
+   └── Ubuntu VM
+       ├── 2 vCPU
+       ├── 2 GB RAM
+       └── 20 GB Disk
+
+VMware Workstation
+   └── Ubuntu VM
+       ├── 2 vCPU
+       ├── 2 GB RAM
+       └── 20 GB Disk
+```
+
+Sysbench CPU benchmarking is then used to obtain performance measurements from both environments.
+
+The collected results can be used to compare:
+
+* CPU execution time
+* Number of benchmark events
+* Events per second
+* Latency
+* CPU utilization
+* Memory utilization
+* Overall virtualization behavior
+
+---
+
+# 52. Final Comparison
+
+The experiment provides a practical comparison between:
+
+```text
+Type-1 Hypervisor
+       │
+       ▼
+   Proxmox VE
+       │
+       ▼
+ Ubuntu Virtual Machine
+
+
+Type-2 Hypervisor
+       │
+       ▼
+VMware Workstation
+       │
+       ▼
+ Ubuntu Virtual Machine
+```
+
+Both environments use approximately the same virtual hardware configuration and the same Ubuntu guest operating system. Sysbench is used to perform the CPU benchmark under both virtualization environments.
+
+The final performance comparison should be based on the actual benchmark values recorded during execution rather than assumed values.
+
+---
+
+# 53. Conclusion
+
+This experiment demonstrates the practical setup and performance analysis of two different virtualization approaches.
+
+**Proxmox VE** is used as the Type-1 hypervisor, where virtualization is provided directly on the physical server platform. **VMware Workstation** is used as the Type-2 hypervisor, where virtualization operates through the host operating system.
+
+Both virtual machines are configured with:
+
+* Ubuntu operating system
+* 2 virtual CPUs
+* 2 GB RAM
+* 20 GB virtual disk
+
+After configuring both environments, system information is verified using Linux commands and CPU performance is measured using Sysbench.
+
+The recorded execution time, events per second, and latency values provide the basis for comparing the two virtualization environments.
+
+---
+
+## Repository Structure
+
+A suggested repository structure is:
+
+```text
+Hypervisor-Performance-Analysis/
+│
+├── README.md
+│
+├── Type-1-Proxmox/
+│   ├── screenshots/
+│   └── results/
+│
+├── Type-2-VMware/
+│   ├── screenshots/
+│   └── results/
+│
+└── comparison/
+    └── performance-results.md
+```
+
+Screenshots of the Proxmox interface, VMware Workstation, Ubuntu terminal outputs, Sysbench results, and final comparison can be added to the respective folders.
+
+---
+
+## Technologies Used
+
+* **Proxmox VE**
+* **VMware Workstation**
+* **Ubuntu Linux**
+* **Sysbench**
+* **Virtualization**
+* **CPU Benchmarking**
+
+---
+
+## Key Commands
+
+```bash
+hostnamectl
+lscpu
+free -h
+df -h
+top
+sudo apt update
+sudo apt install sysbench -y
+sysbench --version
+sysbench cpu --cpu-max-prime=20000 run
+sudo poweroff
+```
+
+---
+
+## Experiment Summary
+
+| Feature             | Type-1          | Type-2             |
+| ------------------- | --------------- | ------------------ |
+| Hypervisor          | Proxmox VE      | VMware Workstation |
+| Hypervisor Category | Type-1          | Type-2             |
+| Guest OS            | Ubuntu          | Ubuntu             |
+| CPU                 | 2 vCPU          | 2 vCPU             |
+| RAM                 | 2 GB            | 2 GB               |
+| Disk                | 20 GB           | 20 GB              |
+| Network             | vmbr0           | NAT                |
+| Benchmark           | Sysbench        | Sysbench           |
+| Main Analysis       | CPU Performance | CPU Performance    |
+
+---
+
+**Note:** The performance values in the comparison tables should be replaced with the actual values obtained when running the Sysbench benchmark on your systems.
