@@ -73,3 +73,20 @@ sysbench cpu --cpu-max-prime=20000 run
 
 ## 3. Hypervisor Performance Visual Analysis
 <img width="1977" height="1180" alt="01_execution_time" src="https://github.com/user-attachments/assets/36739b49-bfe4-42a5-b201-1c7b4ede4851" />
+
+<img width="1977" height="1180" alt="02_total_events" src="https://github.com/user-attachments/assets/e394d3c1-eb33-45b9-ab39-8111679839e2" />
+
+<img width="1977" height="1180" alt="03_events_per_second" src="https://github.com/user-attachments/assets/b447f53f-e784-442f-896b-cc59d2b2307e" />
+
+<img width="1977" height="1180" alt="04_minimum_latency" src="https://github.com/user-attachments/assets/d0b1deca-e278-41dd-852a-247b3f877e59" />
+
+<img width="1977" height="1180" alt="05_average_latency" src="https://github.com/user-attachments/assets/5d641fe6-6b5f-4129-8771-e9ca807a4c36" />
+
+<img width="1977" height="1180" alt="06_maximum_latency" src="https://github.com/user-attachments/assets/97cd6c5f-9668-42a0-b693-1d8a60cec47f" />
+
+<img width="1977" height="1178" alt="07_relative_difference" src="https://github.com/user-attachments/assets/ef410933-1f3f-4788-9b4b-a7bd1e2e4c36" />
+
+
+
+
+
