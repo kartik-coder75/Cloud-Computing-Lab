@@ -70,3 +70,6 @@ sysbench cpu --cpu-max-prime=20000 run
     <td>2.89 ms</td>
   </tr>
 </table>
+
+## 3. Hypervisor Performance Visual Analysis
+<img width="1977" height="1180" alt="01_execution_time" src="https://github.com/user-attachments/assets/36739b49-bfe4-42a5-b201-1c7b4ede4851" />
