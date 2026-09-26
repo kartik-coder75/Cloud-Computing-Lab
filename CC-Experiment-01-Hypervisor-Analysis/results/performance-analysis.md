@@ -86,6 +86,10 @@ sysbench cpu --cpu-max-prime=20000 run
 
 <img width="1977" height="1178" alt="07_relative_difference" src="https://github.com/user-attachments/assets/ef410933-1f3f-4788-9b4b-a7bd1e2e4c36" />
 
+---
+#### Final Conclusion: 
+Overall, the performance analysis shows that Type-1 (Proxmox VE) achieved higher event-processing efficiency and lower latency than Type-2 (VMware Workstation) across the tested workloads. These results highlight the performance advantage of bare-metal virtualization for this benchmark.
+
 
 
 
