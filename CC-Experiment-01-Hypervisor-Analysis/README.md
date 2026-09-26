@@ -1221,6 +1221,11 @@ Both virtual machines are configured with approximately:
 
 System configuration is verified using Linux commands such as `hostnamectl`, `lscpu`, `free -h`, and `df -h`.
 
+
+Sysbench is then installed and used to perform CPU benchmarking. The benchmark results provide measurements such as total execution time, total events, events per second, and latency.
+
+These measured values can then be used to analyze the performance of the two virtualization environments under similar virtual machine configurations.
+
 ## Hypervisor Performance Visual Analysis
 <img width="1977" height="1180" alt="01_execution_time" src="https://github.com/user-attachments/assets/36739b49-bfe4-42a5-b201-1c7b4ede4851" />
 
@@ -1239,9 +1244,4 @@ System configuration is verified using Linux commands such as `hostnamectl`, `ls
 ---
 #### Final Conclusion: 
 Overall, the performance analysis shows that Type-1 (Proxmox VE) achieved higher event-processing efficiency and lower latency than Type-2 (VMware Workstation) across the tested workloads. These results highlight the performance advantage of bare-metal virtualization for this benchmark.
-
-
-Sysbench is then installed and used to perform CPU benchmarking. The benchmark results provide measurements such as total execution time, total events, events per second, and latency.
-
-These measured values can then be used to analyze the performance of the two virtualization environments under similar virtual machine configurations.
 
