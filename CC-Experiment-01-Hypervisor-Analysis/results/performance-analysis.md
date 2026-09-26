@@ -34,7 +34,7 @@ sysbench cpu --cpu-max-prime=20000 run
     <th>Difference</th>
   </tr>
   <tr>
-    <td><b></b>Execution Time</b></td>
+    <td><b>Execution Time</b></td>
     <td>9.9968 s</td>
     <td>9.9959 s</td>
     <td>0.0009 s</td>
